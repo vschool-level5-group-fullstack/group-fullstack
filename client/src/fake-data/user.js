@@ -1,6 +1,6 @@
 const user = {
   id: 1,
-  firsName: "David",
+  firstName: "David",
   lastName: "Saperstein",
   email: "d.h.saperstein@gmail.com",
   weeklyPlan: [
