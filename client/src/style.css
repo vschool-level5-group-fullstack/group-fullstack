@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+}
+
+.banner {
+    background-color: rgb(19,70,38);
+    display: flex;
+    height: 100px; 
+    font-size: 30px;
+    color: rgb(245,245,245);
+    text-align: left;
+}
+
+/*@media only screen and (min-width: 300px) and (max-width:640px) {
+    .banner{
+        background-color: rgb(19,70,38);
+    }
+}*/
