@@ -1,10 +1,11 @@
 import React from 'react'
-import "./style.css"
 
 function Banner() {
     return(
-        <header className="banner">DINNER PLANS</header>
+        <header className="banner">DINNER PLANS
+        <img src="https://png.pngitem.com/pimgs/s/351-3516371_thumb-image-transparent-background-food-icon-transparent-hd.png"/>
+        </header>
     )
 }
 
-export default Banner
+export default Banner 
