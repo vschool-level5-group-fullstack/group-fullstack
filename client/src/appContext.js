@@ -21,9 +21,9 @@ function AppContextProvider(props) {
     }
     
     //api call
-    function randomRecipe() {
+    /*function randomRecipe() {
 
-    }
+    }*/
 
 
     
