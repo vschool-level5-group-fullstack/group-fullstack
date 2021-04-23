@@ -3,7 +3,7 @@ import React from 'react'
 function Banner() {
     return(
         <header className="banner">DINNER PLANS
-        <img src="https://static.thenounproject.com/png/229959-200.png"/>
+        <img src="https://victorycafe.ca/wp-content/uploads/2017/09/knife-and-fork.png"/>
         </header>
     )
 }
