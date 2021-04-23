@@ -1,26 +1,39 @@
-import React from 'react'
+import React, {useContext, useState} from "react"
+import { AppContext } from "../appContext"
 
-function Search() {
+
+function Search(props) {
+    const {randomRecipeCall, getIngredients} = useContext(AppContext)
+    const [ingredients, setIngredients] = useState('')
+
+    function getRandom(e) {
+        e.preventDefault()
+        randomRecipeCall()
+    }
+
+    function getSearch(e) {
+        e.preventDefault()
+        getIngredients(ingredients)
+    }
+
+    function handleChange(e) {
+        const {name, value} = e.target
+        setIngredients(value)
+     }
+
     return(
         <div>
             <form>
-                <label>Today is</label>
                 <input
-                    type="date"
-                    id="start"
-                    value="2021-14-04"
+                    type="text"
+                    name="ingredients"
+                    placeholder="enter ingredients here"
+                    value= {ingredients}
+                    onChange={handleChange}
                 />
-                <div className="ingredients">
-                    <p>Search By Ingredients</p>
-                    <input
-                        type="text"
-                        placeholder="enter ingredients here"
-                    />
-                    <p>
-                        or
-                    </p>
-                    <h4>CHOOSE RANDOM</h4>
-                </div>
+                <button onClick={getSearch}>Search Ingredients</button>
+                <br/>
+                <button onClick={getRandom}>CHOOSE RANDOM</button>
             </form>
         </div>
     )

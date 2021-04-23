@@ -9,7 +9,8 @@ import Search from './components/Search.js'
 export default function App(){
     return(
         <div>
-            <Login />
+            <Banner />
+            <Search />
         </div>
     )
 }
