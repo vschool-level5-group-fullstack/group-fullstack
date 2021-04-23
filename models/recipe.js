@@ -26,10 +26,11 @@ const recipeSchema = new Schema({
     type: String,
     required: true
   },
-  healthInfo: {
-    type: Array,
-    required: true
-  }
+  vegetarian: Boolean,
+  vegan: Boolean,
+  glutenFree: Boolean,
+  dairyFree: Boolean,
+  healthScore: Number
 })
 
 module.exports = mongoose.model('Recipe', recipeSchema)
