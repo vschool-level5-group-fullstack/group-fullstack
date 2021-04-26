@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function CreateAccount(){
+    
     return(
         <div className='createAccountContainer'>
             <i className="fas fa-user-circle" style={{fontSize: '260px', color: 'rgba(200, 16, 46, 1)'}}></i>
