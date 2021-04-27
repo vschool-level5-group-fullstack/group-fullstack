@@ -100,3 +100,36 @@ div.recipeDisp {
     border-radius: 8px;
     box-shadow: 4px 8px 40px rgba(0, 0, 0, 0.25);
 }
+
+
+/* Dashboard Component */
+
+.dashBoard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    row-gap: 20px;
+    column-gap: 10px;
+    margin-left: 5vw;
+    margin-right: 10vw;
+}
+
+.dashBoardCard {
+
+}
+
+.dashBoardCard > h3 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.welcomeDiv {
+    margin-top: 10px;
+    padding: 30px;
+    text-align: left;
+    /* border: 1px solid black; */
+}
+
+.welcomeDiv > h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}

@@ -8,7 +8,7 @@ function AppContextProvider(props) {
     const [selectedRecipe, setSelectedRecipe] = useState({})
     const [userList, setUserList] = useState([])
     const [randomRecipe, setRandomRecipe] = useState({})
-
+    
 
     //api call
     function getUsers() {
@@ -21,7 +21,7 @@ function AppContextProvider(props) {
     }
     
     //api call
-    function randomRecipe() {
+    function getRandomRecipe() {
 
     }
 
