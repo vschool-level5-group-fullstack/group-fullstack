@@ -1,14 +1,28 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import userList from '../fake-data/user-list.js'
+import { AppContext } from '../appContext'
+// import userList from '../fake-data/user-list.js'
 // need to import Dashboard here for routing to dash from login page
 
 export default function Login(){
-    const [user, setUser] = useState({name:''})
+    const [user, setUser] = useState('')
+    const [userList, setUserList] = useState([])
+    const {getUser} = useContext(AppContext)
+
+    useEffect(() => {
+        axios.get('/users/list')
+            .then(res => {
+                console.log(res.data)
+                setUserList(res.data)
+            })
+            .catch(err => console.log(err))
+    }, [])
 
     function handleChange(e){
         const {value} = e.target
-        setUser({name:value})
+        setUser(value)
+        console.log(user)
     }
 
     return( 
@@ -19,11 +33,11 @@ export default function Login(){
             <select onChange={handleChange}>
                 <option value=''> - Select Existing Account -</option>
                 {userList.map(user => {
-                    return <option value={user.firstName} key={user.id}> {user.firstName} {user.lastName} </option>
+                    return <option value={user._id} key={user._id}> {user.firstName} {user.lastName} </option>
                 })}
             </select>
-            {/* pass state info to dash and setup button/route to dash from login */}
-            {/* <Link user={user} to='/dashboard'> <Dashboard/> </Link> */}
+            {/* pass state info to dash and setup butto n/route to dash from login */}
+            {/* <Link user={user} to='/dashboard' onClick=getUser(user)> <Dashboard/> </Link> */}
             <Link className='createAcctBtn' to='/createAccount'> Create New Account </Link>
         </div>
     )

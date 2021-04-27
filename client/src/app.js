@@ -10,7 +10,6 @@ import CreateAccount from './forms/CreateAccount.js'
 import Banner from './components/banner.js'
 import Search from './components/Search.js'
 
-
 export default function App(){
     return(
         <>
