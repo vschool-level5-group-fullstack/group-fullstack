@@ -3,7 +3,7 @@ import recipe from '../fake-data/recipe.js'
 
 // FOR FINAL
 // switch props for recipe in (const and function arg) and add props
-// switch button text into props destructor
+// switch button text into the props destructor
 export default function RecipeCard(){
     const {title, image} = recipe
     const btnText = 'Select'

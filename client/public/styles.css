@@ -27,6 +27,7 @@ div.createAccountContainer {
     align-items: center;
     text-align: center;
     justify-content: center;
+    margin: 30px;
 }
 
 form {
@@ -54,6 +55,17 @@ input {
     padding: 14px;
     color: white;
     margin: 12px;
+    text-decoration: none;
+}
+
+.createAcctBtn {
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(18, 69, 38, 1);
+    padding: 14px;
+    color: white;
+    margin: 12px;
+    text-decoration: none;
 }
 
 /*  */
@@ -115,6 +127,10 @@ div.recipeDisp {
 
 img {
     height: 50px;
+}
+
+.fas {
+    margin-left: 9px;
 }
 
 body {
