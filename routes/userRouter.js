@@ -13,13 +13,12 @@ userRouter.get('/', (req, res, next) => {
 })
 
 userRouter.get('/list', (req, res, next) => {
-  User.find((err, users) => {
+  User.find({}, 'firstName lastName', (err, users) => {
     if(err){
       res.status(500)
       return next(err)
     }
-    const firstLast = users.map(user => `${user.firstName} ${user.lastName}`)
-    return res.status(200).send(firstLast)
+    return res.status(200).send(users)
   })
 })
 
