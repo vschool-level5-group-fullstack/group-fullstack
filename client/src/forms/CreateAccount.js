@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+// need to import Dashboard here for routing to dash from create account page
 
 export default function CreateAccount(){
     return(
@@ -16,7 +18,7 @@ export default function CreateAccount(){
                 <input placeholder='Password'></input>
             </form>
                 <input type='checkbox'/> I agree to terms of service and privacy policy
-                <button className='signUpBtn'> Sign Up </button>
+                <Link className='signUpBtn' to='/dashboard'> Sign Up </Link>
         </div>
     )
 }
