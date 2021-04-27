@@ -3,10 +3,10 @@ import recipe from '../fake-data/recipe.js'
 
 // FOR FINAL
 // switch props for recipe in (const and function arg) and add props
-// switch button text into the props destructor
-export default function RecipeCard(){
+// switch button text into props destructor
+export default function RecipeCard(props){
     const {title, image} = recipe
-    const btnText = 'Select'
+    const btnText = props.buttonText ? props.buttonText : 'Select'
     return(
         <div className='recipeCard'>
             <div className='recipeDisp' style={{background: `url(${image})`, backgroundSize: 'cover'}}>
