@@ -26,7 +26,7 @@ function AppContextProvider(props) {
         .then(res => {
             console.log(res.data)
             setSelectedRecipe([...res.data])
-         })
+        })
             .catch(err => console.log(err))
     }
     
@@ -39,7 +39,6 @@ function AppContextProvider(props) {
             })
             .catch(err => console.log(err))
     }
-=
 
 
     return (
@@ -54,7 +53,7 @@ export {AppContextProvider, AppContext}
 /*
 1. The user will enter a the ingredients into the search box, and you will receive it as a string.
 2. Take that string and convert/parse it to the following format: 
- let queryString = INGREDIENT_1,+INGREDIENT_2,+INGREDIENT_3  {depending on how many ingredients passed)
+let queryString = INGREDIENT_1,+INGREDIENT_2,+INGREDIENT_3  {depending on how many ingredients passed)
 3. Add that string (save it to a variable as shown above) to the GET request URL: 
 `https://api.spoonacular.com/recipes/findByIngredients?apiKey=API_KEY_GOES_HERE&ingredients=${queryString}&num=NUM_OF_RECIPES_TO_SHOW
 */
