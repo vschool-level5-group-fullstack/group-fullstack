@@ -10,13 +10,18 @@ function AppContextProvider(props) {
     const apiKey = "?apiKey=481185a2b3d040398c8a073bdbaf2c54"
 
     const [selectedRecipe, setSelectedRecipe] = useState([])
-    const [userList, setUserList] = useState([])
+    const [currentUser, setCurrentUser] = useState({})
     const [randomRecipe, setRandomRecipe] = useState([])
 
 
     //api call
-    function getUsers() {
-
+    function getUser(id) {
+        axios.get(`users/${id}`)
+        .then(res => {
+            console.log(res.data)
+            setCurrentUser(res.data)
+        })
+        .catch (err => console.log(err))
     }
 
     //api call
@@ -42,7 +47,14 @@ function AppContextProvider(props) {
 
 
     return (
-        <AppContext.Provider value={{getIngredients, randomRecipeCall, selectedRecipe, randomRecipe}}>
+        <AppContext.Provider 
+            value={{
+                getUser,
+                getIngredients, 
+                randomRecipeCall, 
+                selectedRecipe, 
+                randomRecipe,                
+            }}>
             {props.children}
         </AppContext.Provider>
     )
