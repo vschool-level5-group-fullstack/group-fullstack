@@ -113,6 +113,7 @@ div.recipeDisp {
     box-shadow: 4px 8px 40px rgba(0, 0, 0, 0.25);
 }
 
+<<<<<<< HEAD
 
 /* Dashboard Component */
 
@@ -145,6 +146,7 @@ div.recipeDisp {
     margin-top: 0;
     margin-bottom: 0;
 }
+=======
 /*Banner*/
 .banner {
     background-color: rgb(19,70,38);
@@ -169,3 +171,4 @@ body {
     margin: 0;
 }
 
+>>>>>>> main
