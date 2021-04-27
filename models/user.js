@@ -19,8 +19,34 @@ const userSchema = new Schema({
     required: true
   },
   week: {
-    type: Array,
-    required: true
+    monday: {
+      type: Schema.Types.ObjectId,
+      ref: 'Recipe'
+    },
+    tuesday: {
+      type: Schema.Types.ObjectId,
+      ref: 'Recipe'
+    },
+    wednesday: {
+      type: Schema.Types.ObjectId,
+      ref: 'Recipe' 
+    },
+    thursday: {
+      type: Schema.Types.ObjectId,
+      ref: 'Recipe'
+    },
+    friday: {
+      type: Schema.Types.ObjectId,
+      ref: 'Recipe'
+    },
+    saturday: {
+      type: Schema.Types.ObjectId,
+      ref: 'Recipe'
+    },
+    sunday: {
+      type: Schema.Types.ObjectId,
+      ref: 'Recipe'
+    }
   }
 })
 
