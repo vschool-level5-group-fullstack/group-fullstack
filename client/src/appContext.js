@@ -49,16 +49,21 @@ function AppContextProvider(props) {
         })
         .catch (err => console.log(err))
     }
-    //db new recipe post request
-    // function newRecipe(newRecipe) {
-    //     axios.post('recipes', newRecipe)
-    //     .then(res => {
-    //         setCurrentUser(prevCurrentUser => {
-    //             const newCurrentUser = {...prevCurrentUser, prevCurrentUser.week.currentDay}
-    //         })
-    //     })
-    //     .catch (err => console.log(err))
-    // }
+    // db new recipe post request
+    function newRecipe(newRecipe) {
+        axios.post('recipes', newRecipe)
+        .then(res => {
+            setCurrentUser(prevCurrentUser => {
+                const newCurrentUser = {...prevCurrentUser}
+                newCurrentUser.week.currentDay = res.data._id
+                return newCurrentUser
+            })
+            axios.put(`users/${currentUser._id}`, currentUser)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+        })
+        .catch (err => console.log(err))
+    }
 
     //api call
     function getIngredients(ingredients) {
