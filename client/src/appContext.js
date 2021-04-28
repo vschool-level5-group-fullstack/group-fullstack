@@ -25,7 +25,7 @@ function AppContextProvider(props) {
     }
 
     //db new user post request
-    function newUser(newUser) {
+    function createNewUser(newUser) {
         axios.post(`users`, newUser)
         .then(res => {
             setCurrentUser(res.data)
