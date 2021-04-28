@@ -33,6 +33,13 @@ function AppContextProvider(props) {
         .catch (err => console.log(err))
     }
 
+    //db update user put request
+    function updateUser(updates, id) {
+        axios.put(`users/${id}`, updates)
+        .then (res => setCurrentUser(res.data))
+        .catch (err => console.log(err))
+    }
+
     //db call get recipe
     function getRecipe(id) {
         axios.get(`recipes/${id}`)
@@ -44,7 +51,9 @@ function AppContextProvider(props) {
     //db new recipe post request
     function newRecipe(newRecipe) {
         axios.post('recipes', newRecipe)
-        .then(res => console.log(res.data))
+        .then(res => {
+            updateUser({})
+        })
         .catch (err => console.log(err))
     }
 
