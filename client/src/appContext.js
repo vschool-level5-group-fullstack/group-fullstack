@@ -12,15 +12,39 @@ function AppContextProvider(props) {
     const [selectedRecipe, setSelectedRecipe] = useState([])
     const [currentUser, setCurrentUser] = useState({})
     const [randomRecipe, setRandomRecipe] = useState([])
+    const [newUser, setNewUser] = useState({})
 
 
-    //api call
+    //db call
     function getUser(id) {
         axios.get(`users/${id}`)
         .then(res => {
-            console.log(res.data)
             setCurrentUser(res.data)
         })
+        .catch (err => console.log(err))
+    }
+
+    //db new user post request
+    function newUser(newUser) {
+        axios.post(`users`, newUser)
+        .then(res => {
+            setCurrentUser(res.data)
+        })
+        .catch (err => console.log(err))
+    }
+
+    //db call get recipe
+    function getRecipe(id) {
+        axios.get(`recipes/${id}`)
+        .then(res => {
+            setSelectedRecipe(res.data)
+        })
+        .catch (err => console.log(err))
+    }
+    //db new recipe post request
+    function newRecipe(newRecipe) {
+        axios.post('recipes', newRecipe)
+        .then(res => console.log(res.data))
         .catch (err => console.log(err))
     }
 
@@ -49,6 +73,8 @@ function AppContextProvider(props) {
     return (
         <AppContext.Provider 
             value={{
+                newUser,
+                setNewUser,
                 getUser,
                 getIngredients, 
                 randomRecipeCall, 
