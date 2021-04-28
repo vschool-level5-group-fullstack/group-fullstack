@@ -49,6 +49,16 @@ function AppContextProvider(props) {
         })
         .catch (err => console.log(err))
     }
+
+    //db call get recipe and return only title and image
+    function getRecipeTitle(id) {
+        axios.get(`recipes/title/${id}`)
+        .then(res => {
+            setSelectedRecipe(res.data)
+        })
+        .catch(err => console.log(err))
+    }
+
     // db new recipe post request
     function newRecipe(newRecipe) {
         axios.post('recipes', newRecipe)
@@ -97,7 +107,8 @@ function AppContextProvider(props) {
                 getIngredients, 
                 randomRecipeCall, 
                 selectedRecipe, 
-                randomRecipe,                
+                randomRecipe,
+                getRecipeTitle                
             }}>
             {props.children}
         </AppContext.Provider>
