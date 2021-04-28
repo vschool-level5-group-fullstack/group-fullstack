@@ -1,6 +1,12 @@
-import React from 'react'
+import React, {useState, useContext} from 'react'
+import { Link } from 'react-router-dom'
+// need to import Dashboard here for routing to dash from create account page
+import {AppContext} from '../appContext'
 
 export default function CreateAccount(){
+
+    const {newUser, setNewUser} = useContext(AppContext)
+
     return(
         <div className='createAccountContainer'>
             <i className="fas fa-user-circle" style={{fontSize: '260px', color: 'rgba(200, 16, 46, 1)'}}></i>
@@ -16,7 +22,7 @@ export default function CreateAccount(){
                 <input placeholder='Password'></input>
             </form>
                 <input type='checkbox'/> I agree to terms of service and privacy policy
-                <button className='signUpBtn'> Sign Up </button>
+                <Link className='signUpBtn' to='/dashboard'> Sign Up </Link>
         </div>
     )
 }
