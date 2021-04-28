@@ -12,7 +12,8 @@ function AppContextProvider(props) {
     const [selectedRecipe, setSelectedRecipe] = useState([])
     const [currentUser, setCurrentUser] = useState({})
     const [randomRecipe, setRandomRecipe] = useState([])
-    const [newUser, setNewUser] = useState({})
+    const [newUserInputs, setNewUserInputs] = useState({})
+    const [currentDay, setCurrentDay] = useState('')
 
 
     //db call
@@ -25,7 +26,7 @@ function AppContextProvider(props) {
     }
 
     //db new user post request
-    function newUser(newUser) {
+    function createNewUser(newUser) {
         axios.post(`users`, newUser)
         .then(res => {
             setCurrentUser(res.data)
@@ -49,13 +50,15 @@ function AppContextProvider(props) {
         .catch (err => console.log(err))
     }
     //db new recipe post request
-    function newRecipe(newRecipe) {
-        axios.post('recipes', newRecipe)
-        .then(res => {
-            updateUser({})
-        })
-        .catch (err => console.log(err))
-    }
+    // function newRecipe(newRecipe) {
+    //     axios.post('recipes', newRecipe)
+    //     .then(res => {
+    //         setCurrentUser(prevCurrentUser => {
+    //             const newCurrentUser = {...prevCurrentUser, prevCurrentUser.week.currentDay}
+    //         })
+    //     })
+    //     .catch (err => console.log(err))
+    // }
 
     //api call
     function getIngredients(ingredients) {
@@ -82,8 +85,9 @@ function AppContextProvider(props) {
     return (
         <AppContext.Provider 
             value={{
-                newUser,
-                setNewUser,
+                createNewUser,
+                newUserInputs,
+                setNewUserInputs,
                 getUser,
                 getIngredients, 
                 randomRecipeCall, 
