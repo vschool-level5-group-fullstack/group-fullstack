@@ -6,6 +6,7 @@ import {Switch, Route} from 'react-router-dom'
 // 
 
 import Login from './forms/Login.js'
+import Dashboard from './components/Dashboard.js'
 import CreateAccount from './forms/CreateAccount.js'
 import Banner from './components/banner.js'
 import Search from './components/Search.js'
@@ -22,10 +23,9 @@ export default function App(){
                 <Route path='/createAccount'>
                     <CreateAccount/>
                 </Route>
-            {/* uncomment once imported */}
-                {/* <Route path='/dashboard'>
+                <Route path='/dashboard'>
                     <Dashboard/>
-                </Route> */}
+                </Route>
             </Switch>
         </>
     )

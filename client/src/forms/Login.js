@@ -27,7 +27,7 @@ export default function Login(){
 
     return( 
         <div className='loginContainer'>
-            {console.log(user)}
+            {console.log(userList)}
             <h1> Select Profile </h1>
             <i className="fas fa-user-circle" style={{fontSize: '260px', color: 'rgba(200, 16, 46, 1)'}}></i>
             <select onChange={handleChange}>
@@ -36,9 +36,9 @@ export default function Login(){
                     return <option value={user._id} key={user._id}> {user.firstName} {user.lastName} </option>
                 })}
             </select>
-            {/* pass state info to dash and setup butto n/route to dash from login */}
-            {/* <Link user={user} to='/dashboard' onClick=getUser(user)> <Dashboard/> </Link> */}
+            <Link to='/dashboard' onClick={getUser(user)}> Login </Link>
             <Link className='createAcctBtn' to='/createAccount'> Create New Account </Link>
         </div>
     )
+
 }
