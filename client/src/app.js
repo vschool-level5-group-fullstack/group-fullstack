@@ -9,7 +9,7 @@ import Login from './forms/Login.js'
 import Dashboard from './components/Dashboard.js'
 import CreateAccount from './forms/CreateAccount.js'
 import Banner from './components/banner.js'
-import Search from './components/Search.js'
+
 
 export default function App(){
     return(
@@ -23,6 +23,7 @@ export default function App(){
                 <Route path='/createAccount'>
                     <CreateAccount/>
                 </Route>
+                
                 <Route path='/dashboard'>
                     <Dashboard/>
                 </Route>

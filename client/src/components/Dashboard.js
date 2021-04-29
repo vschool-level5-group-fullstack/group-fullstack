@@ -1,23 +1,20 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import RecipeCard from './RecipeCard.js'
-import recipe from '../fake-data/recipe.js'
+import {AppContext} from '../appContext'
+
 
 function Dashboard(){
-
+    const {currentUser} = useContext(AppContext)
     const week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-
-    // const recipeCardComponent = 
-
-    
     const btnText = 'Edit'
 
     const recipeCardComponent = week.map((day) => {
-       return (
+        return (
             <div className="dashBoardCard">
                 <h3>{day}</h3>
                 <RecipeCard buttonText={btnText} />
             </div>
-       )
+        )
     })
 
 
@@ -26,7 +23,7 @@ function Dashboard(){
         <div className="dashBoard">
             <div className="welcomeDiv">
                 <h3 className="welcomeH3">Welcome back</h3>
-                <h3>(First Name),</h3>
+                <h3>{currentUser.firstName},</h3>
                 <br />
                 <h3>We hope you enjoy</h3>
                 <h3>planning your</h3>

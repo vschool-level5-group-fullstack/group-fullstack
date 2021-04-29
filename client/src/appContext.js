@@ -108,7 +108,8 @@ function AppContextProvider(props) {
                 randomRecipeCall, 
                 selectedRecipe, 
                 randomRecipe,
-                getRecipeTitle                
+                getRecipeTitle,
+                currentDay                
             }}>
             {props.children}
         </AppContext.Provider>
@@ -118,7 +119,7 @@ function AppContextProvider(props) {
 export {AppContextProvider, AppContext}
 
 /*
-1. The user will enter a the ingredients into the search box, and you will receive it as a string.
+1. The user will enter the ingredients into the search box, and you will receive it as a string.
 2. Take that string and convert/parse it to the following format: 
 let queryString = INGREDIENT_1,+INGREDIENT_2,+INGREDIENT_3  {depending on how many ingredients passed)
 3. Add that string (save it to a variable as shown above) to the GET request URL: 

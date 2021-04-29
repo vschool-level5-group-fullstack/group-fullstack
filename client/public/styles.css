@@ -30,7 +30,7 @@ div.createAccountContainer {
     margin: 30px;
 }
 
-form {
+form > div {
     font-size: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -48,7 +48,18 @@ input {
     padding: 10px;
 }
 
+/* Button styles */
 .signUpBtn {
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(18, 69, 38, 1);
+    padding: 14px;
+    color: white;
+    margin: 12px;
+    text-decoration: none;
+}
+
+.loginBtn {
     border: none;
     border-radius: 8px;
     background-color: rgba(18, 69, 38, 1);
