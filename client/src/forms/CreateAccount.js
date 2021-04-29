@@ -5,7 +5,7 @@ import {AppContext} from '../appContext'
 
 export default function CreateAccount(){
 
-    const {newUser, setNewUser} = useContext(AppContext)
+    const {createNewUser, newUserInputs, setNewUserInputs} = useContext(AppContext)
 
     return(
         <div className='createAccountContainer'>

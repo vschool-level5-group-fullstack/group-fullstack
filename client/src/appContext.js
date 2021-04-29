@@ -12,7 +12,8 @@ function AppContextProvider(props) {
     const [selectedRecipe, setSelectedRecipe] = useState([])
     const [currentUser, setCurrentUser] = useState({})
     const [randomRecipe, setRandomRecipe] = useState([])
-    const [newUser, setNewUser] = useState({})
+    const [newUserInputs, setNewUserInputs] = useState({})
+    const [currentDay, setCurrentDay] = useState('')
 
 
     //db call
@@ -48,11 +49,28 @@ function AppContextProvider(props) {
         })
         .catch (err => console.log(err))
     }
-    //db new recipe post request
+
+    //db call get recipe and return only title and image
+    function getRecipeTitle(id) {
+        axios.get(`recipes/title/${id}`)
+        .then(res => {
+            setSelectedRecipe(res.data)
+        })
+        .catch(err => console.log(err))
+    }
+
+    // db new recipe post request
     function newRecipe(newRecipe) {
         axios.post('recipes', newRecipe)
         .then(res => {
-            updateUser({})
+            setCurrentUser(prevCurrentUser => {
+                const newCurrentUser = {...prevCurrentUser}
+                newCurrentUser.week.currentDay = res.data._id
+                return newCurrentUser
+            })
+            axios.put(`users/${currentUser._id}`, currentUser)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
         })
         .catch (err => console.log(err))
     }
@@ -82,13 +100,15 @@ function AppContextProvider(props) {
     return (
         <AppContext.Provider 
             value={{
-                newUser,
-                setNewUser,
+                createNewUser,
+                newUserInputs,
+                setNewUserInputs,
                 getUser,
                 getIngredients, 
                 randomRecipeCall, 
                 selectedRecipe, 
-                randomRecipe,                
+                randomRecipe,
+                getRecipeTitle                
             }}>
             {props.children}
         </AppContext.Provider>
