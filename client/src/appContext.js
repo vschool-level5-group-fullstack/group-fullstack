@@ -101,6 +101,8 @@ function AppContextProvider(props) {
         <AppContext.Provider 
             value={{
                 createNewUser,
+                currentUser,
+                setCurrentUser,
                 newUserInputs,
                 setNewUserInputs,
                 getUser,

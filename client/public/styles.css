@@ -1,6 +1,6 @@
 /*  */
 /* Login Styles */
-div.loginContainer {
+.loginContainer {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -11,7 +11,7 @@ div.loginContainer {
     width: 20%;
 }
 
-div.loginContainer > select {
+.loginContainer > select {
     padding: 15px;
     margin: 15px;
 }
@@ -59,7 +59,7 @@ input {
     text-decoration: none;
 }
 
-.loginBtn {
+.loginBtn > button {
     border: none;
     border-radius: 8px;
     background-color: rgba(18, 69, 38, 1);
@@ -69,7 +69,7 @@ input {
     text-decoration: none;
 }
 
-.createAcctBtn {
+.createAcctBtn > button {
     border: none;
     border-radius: 8px;
     background-color: rgba(18, 69, 38, 1);
