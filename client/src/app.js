@@ -5,10 +5,11 @@ import {Switch, Route} from 'react-router-dom'
 // import RecipeCard from './components/RecipeCard.js'
 // 
 
-import Login from './forms/Login.js'
-import Dashboard from './components/Dashboard.js'
-import CreateAccount from './forms/CreateAccount.js'
 import Banner from './components/banner.js'
+import Login from './forms/Login.js'
+import CreateAccount from './forms/CreateAccount.js'
+import Dashboard from './components/Dashboard.js'
+import DetailsPage from './components/DetailsPage.js'
 
 
 export default function App(){
@@ -26,6 +27,10 @@ export default function App(){
                 
                 <Route path='/dashboard'>
                     <Dashboard/>
+                </Route>
+
+                <Route path='/detailsPage'>
+                    <DetailsPage/>
                 </Route>
             </Switch>
         </>

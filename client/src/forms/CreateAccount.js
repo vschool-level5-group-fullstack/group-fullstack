@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
 // need to import Dashboard here for routing to dash from create account page
-import {AppContext} from '../appContext'
+import {AppContext} from '../appContext.js'
 
 export default function CreateAccount(){
     const {createNewUser, newUserInputs, setNewUserInputs} = useContext(AppContext)
@@ -21,7 +21,7 @@ export default function CreateAccount(){
         <div className='createAccountContainer'>
             <i className="fas fa-user-circle" style={{fontSize: '260px', color: 'rgba(200, 16, 46, 1)'}}></i>
             <h2> Create New Account </h2>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <div>
                     First Name
                     <input required name='firstName' value={newUserInputs.firstName} onChange={handleChange} placeholder='First Name'></input>
@@ -34,7 +34,7 @@ export default function CreateAccount(){
                 </div>
                     <input required type='checkbox' /> I agree to terms of service and privacy policy
                     <br/>
-                    <Link to='/dashboard'> <button className='signUpBtn'> Sign Up </button> </Link>
+                    <Link to='/dashboard'> <button onClick={handleSubmit} className='signUpBtn'> Sign Up </button> </Link>
             </form>
         </div>
     )
