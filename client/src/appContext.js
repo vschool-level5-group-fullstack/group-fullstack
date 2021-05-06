@@ -21,11 +21,13 @@ function AppContextProvider(props) {
     const getUser = async (id) => {
         try {
             const resp = await axios.get(`users/${id}`)
+            console.log(resp)
             setCurrentUser(resp.data)
         } catch (err) {
             console.error(err)
         }
     }
+
     // function getUser(id) {
     //     await axios.get(`users/${id}`)
     //     .then(res => {
@@ -115,11 +117,11 @@ function AppContextProvider(props) {
                 newUserInputs,
                 setNewUserInputs,
                 getUser,
-                getIngredients, 
-                randomRecipeCall, 
+                getIngredients,
                 selectedRecipe, 
                 randomRecipe,
                 getRecipeTitle,
+                randomRecipeCall,
                 currentDay                
             }}>
             {props.children}

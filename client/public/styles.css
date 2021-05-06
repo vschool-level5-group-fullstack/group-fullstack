@@ -180,3 +180,60 @@ body {
     margin: 0;
 }
 
+/* Search Component */
+.searchComp {
+    text-align: center;
+}
+
+.searchBarStyle {
+    background-image: url('https://lh3.googleusercontent.com/proxy/CBWvxjaiSIhcywdVya4iFwHDAJlZV6ZJ5o9Bkpf8gnCWYjj6saLJ2GHYuWHT0dcTBLfEBX8XTd8yU73F3U75bertL02T8KzVa8gqkY1d2JvBiivcghBdZKNnKKVvupvvzJgZSQ');
+    background-repeat: no-repeat;
+    background-position-x: 96%;
+    background-position-y: 50%;
+    background-size: 20px;
+    padding: 10px;
+}
+
+/* Details Page */
+.detailswindow {
+    display: flex;
+}
+
+.searchBoxDisplay {
+    background-color: rgb(19,70,38);
+    border-radius: 8px;
+    color: white;
+    width: 379px;
+    height: 241px;
+    /* margin: 20px; */
+}
+
+.ingredientsDisplay {
+    background-color: rgb(19,70,38);
+    border-radius: 8px;
+
+}
+
+.instructionsDisplay {
+    background-color: rgb(19,70,38);
+    border-radius: 8px;
+
+}
+
+.servingsDisplay {
+    background-color: rgb(19,70,38);
+    border-radius: 8px;
+
+}
+
+.readyTimeDisplay {
+    background-color: rgb(19,70,38);
+    border-radius: 8px;
+
+}
+
+.healthRatingDisplay {
+    background-color: rgb(19,70,38);
+    border-radius: 8px;
+
+}

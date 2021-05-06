@@ -18,9 +18,9 @@ export default function App(){
             <Banner />
             <Switch>
                 <Route exact path='/'>
-                    <Login/>
+                    <DetailsPage/>
                 </Route>
-
+{/* 
                 <Route path='/createAccount'>
                     <CreateAccount/>
                 </Route>
@@ -31,7 +31,7 @@ export default function App(){
 
                 <Route path='/detailsPage'>
                     <DetailsPage/>
-                </Route>
+                </Route> */}
             </Switch>
         </>
     )
