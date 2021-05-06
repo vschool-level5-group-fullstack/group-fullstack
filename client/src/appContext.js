@@ -17,13 +17,22 @@ function AppContextProvider(props) {
 
 
     //db call
-    function getUser(id) {
-        axios.get(`users/${id}`)
-        .then(res => {
-            setCurrentUser(res.data)
-        })
-        .catch (err => console.log(err))
+
+    const getUser = async (id) => {
+        try {
+            const resp = await axios.get(`users/${id}`)
+            setCurrentUser(resp.data)
+        } catch (err) {
+            console.error(err)
+        }
     }
+    // function getUser(id) {
+    //     await axios.get(`users/${id}`)
+    //     .then(res => {
+    //         setCurrentUser(res.data)
+    //     })
+    //     .catch (err => console.log(err))
+    // }
 
     //db new user post request
     function createNewUser(newUser) {

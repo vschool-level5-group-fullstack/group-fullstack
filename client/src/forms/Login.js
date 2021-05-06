@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { AppContext } from '../appContext.js'
 
 
@@ -12,6 +12,8 @@ export default function Login(){
 
     const {getUser, currentUser, setCurrentUser} = useContext(AppContext)
 
+    let history = useHistory()
+
     useEffect(() => {
         axios.get('users/list')
             .then(res => {
@@ -21,21 +23,18 @@ export default function Login(){
             .catch(err => console.log(err))
     }, [])
 
-    // useEffect(() => {
-    //     getUser('60820925110eb01b4462e490')
-    //     console.log(currentUser)
-    // }, [])
 
     function handleChange(e){
         const {value} = e.target
         setUserID(value)
     }
 
-    function handleSubmit(e){
+    const handleSubmit = (e) => {
         e.preventDefault()
-        getUser(`${userID}`)
-        console.log(currentUser)
-
+        // getUser(`${userID}`)
+        getUser(userID).then(
+            history.push('/dashboard')
+        )
         // in theory, passes userID to getUser for GET request in context
         // getUser(`${userID}`)
         // console.log(currentUser)
@@ -53,7 +52,7 @@ export default function Login(){
                     return <option value={user._id} key={user._id}> {user.firstName} {user.lastName} </option>
                 })}
             </select>
-            <Link className='loginBtn' to='/dashboard' onClick={handleSubmit}> <button> Login </button>  </Link>
+            <button className='loginBtn' onClick={handleSubmit}> Login </button>
             OR
             <br/>
             <Link className='createAcctBtn' to='/createAccount'> <button> Create New Account </button> </Link>

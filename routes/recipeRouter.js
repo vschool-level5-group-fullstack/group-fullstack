@@ -3,7 +3,7 @@ const recipeRouter = express.Router()
 const Recipe = require('../models/recipe.js')
 
 recipeRouter.get('/', (req, res, next) => {
-    recipe.find((err, recipes) => {
+    Recipe.find((err, recipes) => {
     if(err){
         res.status(500)
         return next(err)
@@ -23,6 +23,16 @@ recipeRouter.post('/', (req, res, next) => {
     })
 })
 
+recipeRouter.get('/', (req, res, next) => {
+    Recipe.find((err, recipes) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      return res.status(200).send(recipes)
+    })
+  })
+
 recipeRouter.get('/:recipeId', (req, res, next) => {
     Recipe.findById(req.params.recipeId, (err, recipe) => {
     if(err) {
@@ -30,6 +40,16 @@ recipeRouter.get('/:recipeId', (req, res, next) => {
         return next(err)
     }
     return res.status(200).send(recipe)
+    })
+})
+
+recipeRouter.get('/title/:recipeId', (req, res, next) => {
+    Recipe.findById(req.params.recipeId, 'title image', (err, recipe) => {
+        if(err) {
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(recipe)
     })
 })
 

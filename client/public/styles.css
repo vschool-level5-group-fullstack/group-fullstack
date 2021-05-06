@@ -59,7 +59,7 @@ input {
     text-decoration: none;
 }
 
-.loginBtn > button {
+.loginBtn {
     border: none;
     border-radius: 8px;
     background-color: rgba(18, 69, 38, 1);
