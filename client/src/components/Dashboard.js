@@ -22,8 +22,7 @@ const Dashboard = () => {
     return (
         <div className="dashBoard">
             <div className="welcomeDiv">
-                <h3 className="welcomeH3">Welcome back</h3>
-                <h3>{currentUser.firstName},</h3>
+                <h2 className="welcomeH3">Welcome back <br/> {currentUser.firstName}!</h2>
                 <br />
                 <h3>We hope you enjoy</h3>
                 <h3>planning your</h3>

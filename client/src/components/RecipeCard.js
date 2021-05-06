@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import recipe from '../fake-data/recipe.js'
 
 // FOR FINAL
@@ -12,7 +13,7 @@ export default function RecipeCard(props){
             <div className='recipeDisp' style={{background: `url(${image})`, backgroundSize: 'cover'}}>
                 <h3 className='title'> {title} </h3>
             </div>
-            <button className='cardButton' onClick> {btnText} </button>
+            <Link to='/detailsPage'> <button style={{cursor: 'pointer'}} className='cardButton' > {btnText} </button> </Link>
         </div>
     )
 }
