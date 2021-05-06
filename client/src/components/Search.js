@@ -2,13 +2,15 @@ import React, {useContext, useState} from "react"
 import { AppContext } from "../appContext"
 
 
-function Search(props) {
-    const {randomRecipeCall, getIngredients} = useContext(AppContext)
+function Search() {
+    const {randomRecipeCall, randomRecipe, getIngredients} = useContext(AppContext)
     const [ingredients, setIngredients] = useState('')
 
     function getRandom(e) {
         e.preventDefault()
         randomRecipeCall()
+        // for debugging
+        console.log(randomRecipe)
     }
 
     function getSearch(e) {
@@ -19,25 +21,37 @@ function Search(props) {
     function handleChange(e) {
         const {name, value} = e.target
         setIngredients(value)
-     }
+    }
 
     return(
-        <div>
-            <form>
-                <input
+        <div className='searchComp'>
+                <input className='searchBarStyle'
                     type="text"
                     name="ingredients"
-                    placeholder="enter ingredients here"
+                    placeholder="Search By Ingredient"
                     value= {ingredients}
                     onChange={handleChange}
+                    onSubmit={getSearch}
                 />
-                <button onClick={getSearch}>Search Ingredients</button>
                 <br/>
-                <button onClick={getRandom}>CHOOSE RANDOM</button>
-            </form>
+                <br/>
+                OR
+                <br/>
+                <br/>
+                <button style={{
+                    color: 'white', 
+                    backgroundColor: 'transparent', 
+                    border: 'none', 
+                    cursor: 'pointer'}}
+                    onClick={getRandom}>
+                        <i style={{
+                            fontSize:'64px', 
+                            color:'rgba(64, 171, 102, 1)'}} 
+                            className="fas fa-dice-five"/>
+                            CHOOSE RANDOM
+                </button>
         </div>
     )
 }
 
 export default Search
-

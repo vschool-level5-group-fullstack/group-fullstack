@@ -17,7 +17,6 @@ export default function Login(){
     useEffect(() => {
         axios.get('users/list')
             .then(res => {
-                console.log(res.data)
                 setUserList(res.data)
             })
             .catch(err => console.log(err))
@@ -31,19 +30,13 @@ export default function Login(){
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // getUser(`${userID}`)
         getUser(userID).then(
             history.push('/dashboard')
         )
-        // in theory, passes userID to getUser for GET request in context
-        // getUser(`${userID}`)
-        // console.log(currentUser)
-        // but currentUser is not returning anything upon submit
     }
 
     return( 
-        <form className='loginContainer'>
-            {console.log(userID)}
+        <form onSubmit={handleSubmit} className='loginContainer'>
             <h1> Select Profile </h1>
             <i className="fas fa-user-circle" style={{fontSize: '260px', color: 'rgba(200, 16, 46, 1)'}}></i>
             <select onChange={handleChange}>
@@ -52,7 +45,7 @@ export default function Login(){
                     return <option value={user._id} key={user._id}> {user.firstName} {user.lastName} </option>
                 })}
             </select>
-            <button className='loginBtn' onClick={handleSubmit}> Login </button>
+            <button className='loginBtn'> Login </button>
             OR
             <br/>
             <Link className='createAcctBtn' to='/createAccount'> <button> Create New Account </button> </Link>

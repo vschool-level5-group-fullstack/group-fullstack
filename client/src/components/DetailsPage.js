@@ -6,9 +6,16 @@ export default function DetailsPage(){
 
     return(
         <>
-        <div className='detailswindow'>
-            
-        </div>
+            <div className='detailswindow'>
+                <div className='searchBoxDisplay'>
+                    <Search/> 
+                </div>
+                <div className='ingredientsDisplay'> </div>
+                <div className='instructionsDisplay'> </div>
+                <div className='servingsDisplay'> </div>
+                <div className='readyTimeDisplay'> </div>
+                <div className='healthRatingDisplay'> </div>
+            </div>
         </>
     )
 }
