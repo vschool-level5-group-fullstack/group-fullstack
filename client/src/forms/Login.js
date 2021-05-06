@@ -36,8 +36,7 @@ export default function Login(){
             history.push('/dashboard')
         )} else {
             alert('Please select a user')
-        }
-        
+        }       
         // in theory, passes userID to getUser for GET request in context
         // getUser(`${userID}`)
         // console.log(currentUser)
