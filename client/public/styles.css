@@ -211,29 +211,34 @@ body {
 .ingredientsDisplay {
     background-color: rgb(19,70,38);
     border-radius: 8px;
-
+    width: 379px;
+    height: 306px;
 }
 
 .instructionsDisplay {
     background-color: rgb(19,70,38);
     border-radius: 8px;
-
+    width: 479px;
+    height: 413px;
 }
 
 .servingsDisplay {
     background-color: rgb(19,70,38);
     border-radius: 8px;
-
+    width: 232px;
+    height: 122px;
 }
 
 .readyTimeDisplay {
     background-color: rgb(19,70,38);
     border-radius: 8px;
-
+    width: 232px;
+    height: 122px;
 }
 
 .healthRatingDisplay {
     background-color: rgb(19,70,38);
     border-radius: 8px;
-
+    width: 278px;
+    height: 413px;
 }
