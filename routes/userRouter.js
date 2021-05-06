@@ -22,7 +22,7 @@ userRouter.get('/list', (req, res, next) => {
   })
 })
 
-userRouter.get('users/:userId', (req, res, next) => {
+userRouter.get('/:userId', (req, res, next) => {
   User.findById(req.params.userId, (err, user) => {
     if(err) {
       res.status(500)

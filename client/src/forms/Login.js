@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { AppContext } from '../appContext.js'
 
 
@@ -10,7 +10,9 @@ export default function Login(){
     // array for populating list of users at login
     const [userList, setUserList] = useState([])
 
-    const {getUser, currentUser} = useContext(AppContext)
+    const {getUser, currentUser, setCurrentUser} = useContext(AppContext)
+
+    let history = useHistory()
 
     useEffect(() => {
         axios.get('users/list')
@@ -21,20 +23,26 @@ export default function Login(){
             .catch(err => console.log(err))
     }, [])
 
+
     function handleChange(e){
         const {value} = e.target
         setUserID(value)
     }
 
-    function handleSubmit(e){
+    const handleSubmit = (e) => {
         e.preventDefault()
+        // getUser(`${userID}`)
+        getUser(userID).then(
+            history.push('/dashboard')
+        )
         // in theory, passes userID to getUser for GET request in context
-        getUser(userID)
+        // getUser(`${userID}`)
+        // console.log(currentUser)
         // but currentUser is not returning anything upon submit
     }
 
     return( 
-        <form onSubmit={handleSubmit} className='loginContainer'>
+        <form className='loginContainer'>
             {console.log(userID)}
             <h1> Select Profile </h1>
             <i className="fas fa-user-circle" style={{fontSize: '260px', color: 'rgba(200, 16, 46, 1)'}}></i>
@@ -44,7 +52,7 @@ export default function Login(){
                     return <option value={user._id} key={user._id}> {user.firstName} {user.lastName} </option>
                 })}
             </select>
-            <Link className='loginBtn' to='/dashboard'> <button> Login </button>  </Link>
+            <button className='loginBtn' onClick={handleSubmit}> Login </button>
             OR
             <br/>
             <Link className='createAcctBtn' to='/createAccount'> <button> Create New Account </button> </Link>
