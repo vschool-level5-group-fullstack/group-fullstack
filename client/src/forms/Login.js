@@ -31,10 +31,13 @@ export default function Login(){
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        if(userID.length > 0) {
         // getUser(`${userID}`)
         getUser(userID).then(
             history.push('/dashboard')
-        )
+        )} else {
+            alert('Please select a user')
+        }
         // in theory, passes userID to getUser for GET request in context
         // getUser(`${userID}`)
         // console.log(currentUser)
