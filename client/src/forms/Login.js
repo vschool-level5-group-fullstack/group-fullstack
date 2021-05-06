@@ -38,6 +38,7 @@ export default function Login(){
         )} else {
             alert('Please select a user')
         }
+        
         // in theory, passes userID to getUser for GET request in context
         // getUser(`${userID}`)
         // console.log(currentUser)
