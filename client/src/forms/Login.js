@@ -53,7 +53,7 @@ export default function Login(){
                     return <option value={user._id} key={user._id}> {user.firstName} {user.lastName} </option>
                 })}
             </select>
-            <button className='loginBtn'> Login </button>
+            <button className='loginBtn' onClick={handleSubmit}> Login </button>
             OR
             <br/>
             <Link className='createAcctBtn' to='/createAccount'> <button> Create New Account </button> </Link>
