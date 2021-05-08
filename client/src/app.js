@@ -1,10 +1,6 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 
-// for debugging
-// import RecipeCard from './components/RecipeCard.js'
-// 
-
 import Banner from './components/banner.js'
 import Login from './forms/Login.js'
 import CreateAccount from './forms/CreateAccount.js'
@@ -18,9 +14,9 @@ export default function App(){
             <Banner />
             <Switch>
                 <Route exact path='/'>
-                    <DetailsPage/>
+                    <Login/>
                 </Route>
-{/* 
+
                 <Route path='/createAccount'>
                     <CreateAccount/>
                 </Route>
@@ -31,7 +27,7 @@ export default function App(){
 
                 <Route path='/detailsPage'>
                     <DetailsPage/>
-                </Route> */}
+                </Route>
             </Switch>
         </>
     )

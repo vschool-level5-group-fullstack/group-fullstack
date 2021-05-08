@@ -18,8 +18,9 @@ function Search() {
         getIngredients(ingredients)
     }
 
+        // ** review functionality **
     function handleChange(e) {
-        const {name, value} = e.target
+        const {value} = e.target
         setIngredients(value)
     }
 
