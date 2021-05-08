@@ -1,20 +1,21 @@
-import React, {useContext} from 'react'
-import { Link } from 'react-router-dom'
-// need to import Dashboard here for routing to dash from create account page
-import {AppContext} from '../appContext.js'
+import React, { useContext } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import { AppContext } from '../appContext.js'
 
 export default function CreateAccount(){
-    const {createNewUser, newUserInputs, setNewUserInputs} = useContext(AppContext)
+    const { createNewUser, newUserInputs, setNewUserInputs } = useContext(AppContext)
+    let history = useHistory()
 
     function handleChange(e){
-        const {name, value} = e.target
+        const { name, value } = e.target
         setNewUserInputs(prevInputs => ({...prevInputs, [name]: value}))
-        console.log(newUserInputs)
     }
 
     function handleSubmit(e){
         e.preventDefault()
-        createNewUser(newUserInputs)
+        createNewUser(newUserInputs).then(
+            history.push('/dashboard')
+        )
     }
 
     return(
@@ -32,9 +33,9 @@ export default function CreateAccount(){
                     Password
                     <input required name='password' type='password' value={newUserInputs.password} onChange={handleChange} placeholder='Password'></input>
                 </div>
-                    <input required type='checkbox' /> I agree to terms of service and privacy policy
+                    <input required type='checkbox'/> I agree to terms of service and privacy policy
                     <br/>
-                    <Link to='/dashboard'> <button onClick={handleSubmit} className='signUpBtn'> Sign Up </button> </Link>
+                    <Link to='/dashboard'> <button onClick={handleSubmit} className='btns'> Sign Up </button> </Link>
             </form>
         </div>
     )
