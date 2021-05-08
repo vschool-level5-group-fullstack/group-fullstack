@@ -6,7 +6,7 @@ import {AppContext} from '../appContext'
 const Dashboard = () => {
     const {currentUser} = useContext(AppContext)
     const week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    const btnText = 'Edit'
+    const btnText = 'EDIT'
 
     const recipeCardComponent = week.map((day) => {
         return(

@@ -9,9 +9,7 @@ export default function Login(){
     const [userID, setUserID] = useState('')
     // array for populating list of users at login
     const [userList, setUserList] = useState([])
-
-    const {getUser, currentUser, setCurrentUser} = useContext(AppContext)
-
+    const { getUser } = useContext(AppContext)
     let history = useHistory()
 
     useEffect(() => {
@@ -34,7 +32,7 @@ export default function Login(){
         getUser(userID).then(
             history.push('/dashboard')
         )} else {
-            alert('Please select a user')
+            alert('Please select a user or create a new account')
         }
     }
 
@@ -48,10 +46,10 @@ export default function Login(){
                     return <option value={user._id} key={user._id}> {user.firstName} {user.lastName} </option>
                 })}
             </select>
-            <button className='loginBtn' onClick={handleSubmit}> Login </button>
+            <button className='btns' onClick={handleSubmit}> Login </button>
             OR
             <br/>
-            <Link className='createAcctBtn' to='/createAccount'> <button> Create New Account </button> </Link>
+            <Link to='/createAccount'> <button className='createAccBtn' > Create New Account </button> </Link>
         </form>
     )
 

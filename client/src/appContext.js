@@ -17,7 +17,6 @@ function AppContextProvider(props) {
 
 
     //db call
-
     const getUser = async (id) => {
         try {
             const resp = await axios.get(`users/${id}`)
@@ -28,21 +27,17 @@ function AppContextProvider(props) {
         }
     }
 
-    // function getUser(id) {
-    //     await axios.get(`users/${id}`)
-    //     .then(res => {
-    //         setCurrentUser(res.data)
-    //     })
-    //     .catch (err => console.log(err))
-    // }
-
-    //db new user post request
-    function createNewUser(newUser) {
-        axios.post(`users`, newUser)
+    // create new user
+    const createNewUser = async (newUser) => {
+        try {
+            const resp = await axios.post(`users`, newUser)
+        console.log(resp)
         .then(res => {
             setCurrentUser(res.data)
         })
-        .catch (err => console.log(err))
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     //db update user put request
@@ -117,10 +112,12 @@ function AppContextProvider(props) {
                 newUserInputs,
                 setNewUserInputs,
                 getUser,
-                getIngredients,
-                selectedRecipe, 
-                randomRecipe,
+                selectedRecipe,
+                setSelectedRecipe,
+                newRecipe,
                 getRecipeTitle,
+                getIngredients,
+                randomRecipe,
                 randomRecipeCall,
                 currentDay                
             }}>
