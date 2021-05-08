@@ -32,8 +32,12 @@ export default function Login(){
         getUser(userID).then(
             history.push('/dashboard')
         )} else {
-            alert('Please select a user or create a new account')
+<<<<<<< HEAD
+            alert('Please select a user')
         }
+=======
+            alert('Please select a user')
+>>>>>>> d6eb4b077ed079670be15e632f0a264b436b2805
     }
 
     return( 
