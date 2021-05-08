@@ -39,7 +39,7 @@ export default function Login(){
     }
 
     return( 
-        <form onSubmit={handleSubmit} className='loginContainer'>
+        <form className='loginContainer'>
             <h1> Select Profile </h1>
             <i className="fas fa-user-circle" style={{fontSize: '260px', color: 'rgba(200, 16, 46, 1)'}}></i>
             <select onChange={handleChange}>
@@ -48,7 +48,7 @@ export default function Login(){
                     return <option value={user._id} key={user._id}> {user.firstName} {user.lastName} </option>
                 })}
             </select>
-            <button className='loginBtn'> Login </button>
+            <button className='loginBtn' onClick={handleSubmit}> Login </button>
             OR
             <br/>
             <Link className='createAcctBtn' to='/createAccount'> <button> Create New Account </button> </Link>

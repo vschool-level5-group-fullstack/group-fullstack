@@ -4,7 +4,7 @@ import {AppContext} from '../appContext'
 import Search from './Search.js'
 
 export default function DetailsPage(){
-
+    // import save functionality and random recipe info also search info
     return(
         <>
             <div className='detailswindow'>
