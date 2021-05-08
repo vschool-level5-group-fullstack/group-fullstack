@@ -32,9 +32,7 @@ function AppContextProvider(props) {
         try {
             const resp = await axios.post(`users`, newUser)
         console.log(resp)
-        .then(res => {
-            setCurrentUser(res.data)
-        })
+            setCurrentUser(resp.data)
         } catch (err) {
             console.log(err)
         }
