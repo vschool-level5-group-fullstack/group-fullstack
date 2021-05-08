@@ -35,7 +35,6 @@ export default function Login(){
             history.push('/dashboard')
         )} else {
             alert('Please select a user')
-        }
     }
 
     return( 
