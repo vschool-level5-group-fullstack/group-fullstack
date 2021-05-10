@@ -22,15 +22,25 @@ export default function DetailsPage(){
                     <Search/> 
                 </div>
                 <div className='detail ingredientsDisplay'> Ingredients
-                
+                {/* add ternary for display of data or icon */}
+                <i class="fas fa-apple-alt"></i>
+                <i class="fas fa-carrot"></i>
                 </div>
-                <div className='detail instructionsDisplay'> Instructions </div>
-                <div className='detail servingsDisplay'> Servings </div>
-                <div className='detail readyTimeDisplay'> Ready In </div>
-                <div className='detail healthRatingDisplay'> Health </div>
+                <div className='detail instructionsDisplay'> Instructions
+                {/* add ternary for display of data or icon */}
+                </div>
+                <div className='detail servingsDisplay'> Servings 
+                {/* add ternary for display of data or icon */}
+                </div>
+                <div className='detail readyTimeDisplay'> Ready In 
+                {/* add ternary for display of data or icon */}
+                </div>
+                <div className='detail healthRatingDisplay'> Health
+                {/* add ternary for display of data or icon */}
+                <i class="fas fa-seedling"></i>
+                </div>
                 <div className='detailsBtnContainer'>
                     <Link to='/dashboard'> <button className='btns'> Cancel </button> </Link>
-                    
                     <Link to='/dashboard'> <button className='btns'> Save </button> </Link>
                 </div>
             </div>
