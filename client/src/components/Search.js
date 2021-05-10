@@ -34,6 +34,7 @@ function Search() {
                     onChange={handleChange}
                     onSubmit={getSearch}
                 />
+                <i style={{fontSize:'20px',border: 'white solid 2px', padding: '8px', margin: '3px', borderRadius: '50%'}} className="fas fa-search"></i>
                 <br/>
                 <br/>
                 OR
