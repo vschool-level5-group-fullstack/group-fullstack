@@ -194,53 +194,68 @@ div.recipeDisp {
 /*  */
 /* Details Page */
 .detailswindow {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 24vw);
+    grid-template-rows: repeat(5, 20%);
+    column-gap: 10px;
+    row-gap: 15px;
+    margin-top: 70px;
 }
 
 .detailswindow > .detail {
     color: white;
-    /* margin: 8px; */
     box-shadow: 4px 8px 40px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     background-color: rgb(19,70,38);
 }
 
 .searchBoxDisplay {
-    width: 379px;
-    height: 241px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
 }
 
 .ingredientsDisplay {
-    width: 379px;
-    height: 306px;
     padding: 20px;
-
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 8;
 }
 
 .instructionsDisplay {
-    width: 479px;
-    height: 413px;
     padding: 20px;
-
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 5;
 }
 
 .servingsDisplay {
-    width: 232px;
-    height: 122px;
     padding: 20px;
-    
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 5;
+    grid-row-end: 8;
 }
 
 .readyTimeDisplay {
-    width: 232px;
-    height: 122px;
     padding: 20px;
-
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 5;
+    grid-row-end: 8;
 }
 
 .healthRatingDisplay {
-    width: 278px;
-    height: 413px;
     padding: 20px;
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 6;
+}
 
+.detailsBtnContainer {
+    text-align: center;
 }

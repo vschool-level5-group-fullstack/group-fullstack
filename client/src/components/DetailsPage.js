@@ -28,9 +28,12 @@ export default function DetailsPage(){
                 <div className='detail servingsDisplay'> Servings </div>
                 <div className='detail readyTimeDisplay'> Ready In </div>
                 <div className='detail healthRatingDisplay'> Health </div>
+                <div className='detailsBtnContainer'>
+                    <Link to='/dashboard'> <button className='btns'> Cancel </button> </Link>
+                    
+                    <Link to='/dashboard'> <button className='btns'> Save </button> </Link>
+                </div>
             </div>
-                <Link to='/dashboard'> <button className='btns'> Cancel </button> </Link>
-                <Link to='/dashboard'> <button className='btns'> Save </button> </Link>
         </>
     )
 }

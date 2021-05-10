@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import axios from 'axios'
 
 
@@ -31,7 +31,7 @@ function AppContextProvider(props) {
     const createNewUser = async (newUser) => {
         try {
             const resp = await axios.post(`users`, newUser)
-        console.log(resp)
+            console.log(resp)
             setCurrentUser(resp.data)
         } catch (err) {
             console.log(err)
