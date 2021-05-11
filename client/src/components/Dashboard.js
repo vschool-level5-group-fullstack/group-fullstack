@@ -7,7 +7,6 @@ import date from 'date-and-time';
 
 const Dashboard = () => {
     const {currentUser} = useContext(AppContext)
-    // const week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
     const [day, setDay] = useState('')
 
@@ -46,7 +45,7 @@ const Dashboard = () => {
     return (
         <div className="dashBoard">
             <div className="welcomeDiv">
-                <h2 className="welcomeH3">Welcome back <br/> {currentUser.firstName}!</h2>
+                <h2 className="welcomeH3">Welcome back, <br/> {currentUser.firstName}!</h2>
                 <br />
                 <h3>We hope you enjoy</h3>
                 <h3>planning your</h3>

@@ -131,9 +131,8 @@ div.recipeDisp {
     margin-left: 5vw;
     margin-right: 10vw;
 }
-
 .dashBoardCard {
-
+    margin-top: -10px;
 }
 
 .dashBoardCard > h3 {
